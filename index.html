@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Verdant Roast is a luxury coffee brand serving premium beans, artisanal brews, and handcrafted cafe experiences."
+    />
+    <title>Verdant Roast | Crafted for Coffee Lovers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <nav class="navbar container">
+        <a href="#home" class="brand" aria-label="Verdant Roast home">
+          <span class="brand-mark">V</span>
+          <span>Verdant Roast</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a class="nav-btn nav-login" href="#contact">Login</a>
+            <a class="nav-btn nav-order" href="#featured">Order Now</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="blur blur-one"></span>
+          <span class="blur blur-two"></span>
+          <span class="blur blur-three"></span>
+
+          <div class="floating-beans">
+            <span class="bean bean-one"></span>
+            <span class="bean bean-two"></span>
+            <span class="bean bean-three"></span>
+            <span class="bean bean-four"></span>
+            <span class="bean bean-five"></span>
+          </div>
+        </div>
+
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Small batch. Big flavor.</p>
+            <h1>Crafted for Coffee Lovers</h1>
+            <p class="hero-subheading">
+              Premium roasted beans from around the world served fresh every day.
+            </p>
+            <div class="typewriter-row">
+              <span class="static-text">From bean to cup</span>
+              <span class="typing-text" data-text="slowly, perfectly, and beautifully."></span>
+              <span class="cursor" aria-hidden="true">|</span>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#featured" class="btn btn-primary">Order Now</a>
+              <a href="#menu" class="btn btn-secondary">View Menu</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <strong data-target="12000">0</strong>
+                <span>cups served</span>
+              </div>
+              <div class="stat">
+                <strong data-target="48">0</strong>
+                <span>bean varietals</span>
+              </div>
+              <div class="stat">
+                <strong data-target="4.9">0</strong>
+                <span>average rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="glass-card featured-product-card">
+              <span class="badge">Best seller</span>
+              <h3>Golden Cappuccino</h3>
+              <div class="card-price-row">
+                <span class="price">$8.50</span>
+                <span class="rating">★★★★★</span>
+              </div>
+            </div>
+
+            <div class="hero-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80"
+                alt="Premium coffee latte art cup"
+              />
+            </div>
+
+            <div class="floating-note note-top">
+              <span class="icon">☕</span>
+              <div>
+                <strong>Freshly roasted</strong>
+                <small>Every morning</small>
+              </div>
+            </div>
+
+            <div class="floating-note note-bottom">
+              <span class="icon">🌿</span>
+              <div>
+                <strong>Ethically sourced</strong>
+                <small>100% traceable</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured section" id="featured">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Featured Coffee</p>
+            <h2>Curated favorites for every mood</h2>
+          </div>
+
+          <div class="coffee-grid">
+            <article class="coffee-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+                alt="Velvet Mocha"
+              />
+              <div class="card-body">
+                <div class="card-head">
+                  <h3>Velvet Mocha</h3>
+                  <span class="price">$7.50</span>
+                </div>
+                <p>Dark chocolate finish with silky espresso and steamed milk.</p>
+                <div class="card-meta">
+                  <span class="stars">★★★★★</span>
+                  <button class="mini-btn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="coffee-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80"
+                alt="Cinnamon Crema"
+              />
+              <div class="card-body">
+                <div class="card-head">
+                  <h3>Cinnamon Crema</h3>
+                  <span class="price">$8.00</span>
+                </div>
+                <p>Warm spice notes layered with citrus brightness and velvety foam.</p>
+                <div class="card-meta">
+                  <span class="stars">★★★★★</span>
+                  <button class="mini-btn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="coffee-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80"
+                alt="Abyssal Cold Brew"
+              />
+              <div class="card-body">
+                <div class="card-head">
+                  <h3>Abyssal Cold Brew</h3>
+                  <span class="price">$6.75</span>
+                </div>
+                <p>Slow-steeped and naturally sweet with a smooth, chocolate profile.</p>
+                <div class="card-meta">
+                  <span class="stars">★★★★★</span>
+                  <button class="mini-btn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="coffee-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80"
+                alt="Sunrise Latte"
+              />
+              <div class="card-body">
+                <div class="card-head">
+                  <h3>Sunrise Latte</h3>
+                  <span class="price">$7.20</span>
+                </div>
+                <p>Soft caramel sweetness with a golden crema and toasted finish.</p>
+                <div class="card-meta">
+                  <span class="stars">★★★★★</span>
+                  <button class="mini-btn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="coffee-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80"
+                alt="Cocoa Espresso"
+              />
+              <div class="card-body">
+                <div class="card-head">
+                  <h3>Cocoa Espresso</h3>
+                  <span class="price">$6.50</span>
+                </div>
+                <p>Rich, full-bodied espresso with a luxurious cocoa dusting.</p>
+                <div class="card-meta">
+                  <span class="stars">★★★★★</span>
+                  <button class="mini-btn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="coffee-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=900&q=80"
+                alt="Honey Cloud"
+              />
+              <div class="card-body">
+                <div class="card-head">
+                  <h3>Honey Cloud</h3>
+                  <span class="price">$8.25</span>
+                </div>
+                <p>Light, floral espresso topped with silky foam and wildflower honey.</p>
+                <div class="card-meta">
+                  <span class="stars">★★★★★</span>
+                  <button class="mini-btn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits section" id="about">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why Choose Us</p>
+            <h2>Craftsmanship in every cup</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <div class="feature-icon">🌿</div>
+              <h3>Fresh Beans</h3>
+              <p>Single-origin beans roasted in small batches for peak flavor.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">👩‍🍳</div>
+              <h3>Expert Baristas</h3>
+              <p>Our team crafts each drink with precision and care.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">🚚</div>
+              <h3>Fast Delivery</h3>
+              <p>Freshly brewed comfort delivered quickly to your door.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">✨</div>
+              <h3>Premium Taste</h3>
+              <p>Rich, layered notes and smooth finishes in every sip.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="story section">
+        <div class="container story-grid">
+          <div class="story-image reveal">
+            <img
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80"
+              alt="Coffee shop interior"
+            />
+          </div>
+
+          <div class="story-copy reveal">
+            <p class="eyebrow">Our Story</p>
+            <h2>Born from a love of exceptional coffee.</h2>
+            <p>
+              Verdant Roast began with a simple belief: great coffee should feel as thoughtful as it tastes.
+              We travel the world to source distinctive beans, roast them with care, and serve them in an atmosphere built for connection.
+            </p>
+            <p>
+              From early-morning espresso runs to slow, golden afternoons, every cup is designed to transform an ordinary moment into something memorable.
+            </p>
+            <a href="#contact" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section" id="gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Coffee Gallery</p>
+            <h2>From bean to bloom</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80" alt="Latte art" />
+              <figcaption>Golden Latte</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Espresso in a cup" />
+              <figcaption>Velvet Espresso</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Coffee beans" />
+              <figcaption>Roasted Notes</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=900&q=80" alt="Coffee close-up" />
+              <figcaption>Deep Roast</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80" alt="Pour-over coffee" />
+              <figcaption>Pour Over</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1432107294469-414527cb5c65?auto=format&fit=crop&w=900&q=80" alt="Coffee on a table" />
+              <figcaption>Slow Ritual</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section" id="reviews">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Testimonials</p>
+            <h2>Our community loves every sip</h2>
+          </div>
+
+          <div class="testimonial-slider reveal">
+            <div class="testimonial-track">
+              <article class="testimonial-card active">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Amelia R." />
+                <div class="stars">★★★★★</div>
+                <p>
+                  “The espresso is beautifully balanced and the staff always remembers my favorite order. It feels premium in every detail.”
+                </p>
+                <h3>Amelia R.</h3>
+              </article>
+
+              <article class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Daniel M." />
+                <div class="stars">★★★★★</div>
+                <p>
+                  “A luxury café experience without the fuss. The cold brew is smooth, the pastries are fresh, and the vibe is incredible.”
+                </p>
+                <h3>Daniel M.</h3>
+              </article>
+
+              <article class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=400&q=80" alt="Sofia T." />
+                <div class="stars">★★★★★</div>
+                <p>
+                  “From the roast to the presentation, everything feels intentional. It is my favorite place to reset and recharge.”
+                </p>
+                <h3>Sofia T.</h3>
+              </article>
+            </div>
+
+            <div class="slider-dots" aria-label="Testimonial navigation">
+              <button class="dot active" type="button" aria-label="Slide 1"></button>
+              <button class="dot" type="button" aria-label="Slide 2"></button>
+              <button class="dot" type="button" aria-label="Slide 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer section" id="menu">
+        <div class="container">
+          <div class="offer-banner reveal">
+            <div class="offer-copy">
+              <p class="eyebrow">Weekend special</p>
+              <h2>Buy 2 Get 1 Free</h2>
+              <p>Enjoy our house favorites and bring a friend for the third cup on us.</p>
+              <div class="countdown" data-deadline="2026-12-31T23:59:59">
+                <span>
+                  <strong data-unit="days">00</strong>
+                  <small>Days</small>
+                </span>
+                <span>
+                  <strong data-unit="hours">00</strong>
+                  <small>Hours</small>
+                </span>
+                <span>
+                  <strong data-unit="minutes">00</strong>
+                  <small>Minutes</small>
+                </span>
+                <span>
+                  <strong data-unit="seconds">00</strong>
+                  <small>Seconds</small>
+                </span>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-primary">Order Now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter section">
+        <div class="container">
+          <div class="newsletter-box reveal">
+            <div class="newsletter-copy">
+              <p class="eyebrow">Stay in the loop</p>
+              <h2>Get exclusive access to seasonal brews.</h2>
+            </div>
+
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" placeholder="Email address" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-card reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>We would love to hear from you.</h2>
+
+            <form class="contact-form">
+              <div class="input-row">
+                <input type="text" placeholder="Your Name" aria-label="Name" />
+                <input type="email" placeholder="Email Address" aria-label="Email" />
+              </div>
+              <textarea rows="5" placeholder="Your Message" aria-label="Message"></textarea>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <div class="social-row" aria-label="Social media links">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="X">X</a>
+            </div>
+          </div>
+
+          <div class="map-panel reveal">
+            <div class="map-placeholder" aria-label="Map placeholder">
+              <span class="map-badge">Open Daily • 7AM - 8PM</span>
+              <span class="map-pin">📍</span>
+            </div>
+            <div class="address-box">
+              <h3>Visit Us</h3>
+              <p>215 Brooklane Avenue, Portland, OR 97205</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand">
+            <span class="brand-mark">V</span>
+            <span>Verdant Roast</span>
+          </a>
+          <p>Luxury coffee, cultured rituals, and moments worth savoring.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Working Hours</h3>
+          <ul>
+            <li>Mon - Fri: 7:00 AM - 8:00 PM</li>
+            <li>Saturday: 8:00 AM - 9:00 PM</li>
+            <li>Sunday: 8:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Address</h3>
+          <ul>
+            <li>215 Brooklane Avenue</li>
+            <li>Portland, OR 97205</li>
+            <li>hello@verdantroast.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Verdant Roast. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
