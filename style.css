@@ -1,4 +1,8 @@
 :root {
+  --bg: #0b3d2e;
+  --text: #ffffff;
+  --card: rgba(255, 255, 255, 0.05);
+  --button: #d6b06b;
   --bg-dark: #0b3d2e;
   --bg-deep: #052d22;
   --bg-soft: #124d3f;
@@ -6,8 +10,7 @@
   --cream-2: #efe4d2;
   --gold: #d6b06b;
   --gold-soft: #f4d6a7;
-  --white: #ffffff;
-  --text: #173d35;
+  --white: var(--text);
   --muted: rgba(12, 56, 46, 0.8);
   --glass: rgba(255, 255, 255, 0.09);
   --glass-strong: rgba(255, 255, 255, 0.18);
@@ -17,6 +20,30 @@
   --radius-lg: 24px;
   --radius-md: 18px;
   --container: 1200px;
+}
+
+body.light-theme {
+  --bg: #f8f7f2;
+  --text: #222222;
+  --card: #ffffff;
+  --button: #c89b3c;
+  --bg-dark: #f8f7f2;
+  --bg-deep: #ece8dc;
+  --bg-soft: #ffffff;
+  --cream: #222222;
+  --cream-2: #5c594f;
+  --gold: #c89b3c;
+  --gold-soft: #8b671c;
+  --white: #222222;
+  --muted: rgba(34, 34, 34, 0.72);
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-strong: rgba(255, 255, 255, 0.92);
+  --shadow: 0 22px 50px rgba(67, 58, 35, 0.14);
+  --shadow-soft: 0 16px 30px rgba(67, 58, 35, 0.1);
+}
+
+* {
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 * {
@@ -34,8 +61,8 @@ body {
   background:
     radial-gradient(circle at top left, rgba(214, 176, 107, 0.18), transparent 30%),
     radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.1), transparent 20%),
-    linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 100%);
-  color: var(--white);
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+  color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -182,6 +209,24 @@ button {
   gap: 14px;
 }
 
+#theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--glass);
+  color: var(--text);
+  border: 1px solid var(--glass-strong);
+  font-size: 1.1rem;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
 .nav-btn,
 .btn {
   position: relative;
@@ -201,15 +246,15 @@ button {
 }
 
 .nav-login {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-strong);
 }
 
 .nav-order,
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold), #efcf92);
-  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--button), #efcf92);
+  color: var(--bg-dark);
   box-shadow: 0 14px 28px rgba(214, 176, 107, 0.25);
 }
 
@@ -595,7 +640,7 @@ button {
 }
 
 .coffee-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
