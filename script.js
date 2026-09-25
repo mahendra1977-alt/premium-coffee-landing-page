@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-links a");
@@ -11,6 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const dots = document.querySelectorAll(".dot");
   const buttons = document.querySelectorAll(".btn, .nav-btn, .mini-btn");
   const forms = document.querySelectorAll("form");
+
+  const setThemeIcon = () => {
+    themeToggle.textContent = body.classList.contains("light-theme") ? "☀️" : "🌙";
+  };
+
+  if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-theme");
+  }
+
+  setThemeIcon();
+
+  themeToggle.addEventListener("click", () => {
+    const isLightTheme = body.classList.toggle("light-theme");
+    localStorage.setItem("theme", isLightTheme ? "light" : "dark");
+    setThemeIcon();
+  });
 
   const setHeaderState = () => {
     if (window.scrollY > 30) {
