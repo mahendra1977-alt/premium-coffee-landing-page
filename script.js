@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-links a");
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const searchStatus = document.getElementById("searchStatus");
+  const coffeeCards = document.querySelectorAll(".coffee-card");
   const revealEls = document.querySelectorAll(".reveal");
   const typingEl = document.querySelector(".typing-text");
   const counters = document.querySelectorAll("[data-target]");
@@ -13,6 +17,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const dots = document.querySelectorAll(".dot");
   const buttons = document.querySelectorAll(".btn, .nav-btn, .mini-btn");
   const forms = document.querySelectorAll("form");
+
+  const searchCoffee = () => {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    coffeeCards.forEach((card) => {
+      const searchableText = `${card.textContent} ${card.dataset.search || ""}`.toLowerCase();
+      const matches = !searchTerm || searchableText.includes(searchTerm);
+
+      card.hidden = !matches;
+      visibleCount += Number(matches);
+    });
+
+    searchStatus.hidden = !searchTerm;
+    searchStatus.textContent = visibleCount
+      ? `${visibleCount} coffee options found.`
+      : `No coffee found for "${searchTerm}".`;
+
+    if (searchTerm) {
+      document.querySelector("#featured").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  searchBtn.addEventListener("click", searchCoffee);
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      searchCoffee();
+    }
+  });
 
   const setThemeIcon = () => {
     themeToggle.textContent = body.classList.contains("light-theme") ? "☀️" : "🌙";
