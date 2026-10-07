@@ -13,6 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const dots = document.querySelectorAll(".dot");
   const buttons = document.querySelectorAll(".btn, .nav-btn, .mini-btn");
   const forms = document.querySelectorAll("form");
+  const coffeeCards = document.querySelectorAll(".coffee-card");
+  const favoritesGrid = document.getElementById("favorites-grid");
+  const favoritesEmpty = document.getElementById("favorites-empty");
+  const favoritesKey = "coffeeFavorites";
+
+  const getFavorites = () => {
+    try {
+      const savedFavorites = JSON.parse(localStorage.getItem(favoritesKey) || "[]");
+      return Array.isArray(savedFavorites) ? savedFavorites : [];
+    } catch (error) {
+      return [];
+    }
+  };
+
+  const saveFavorites = (favorites) => {
+    localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+  };
 
   const setThemeIcon = () => {
     themeToggle.textContent = body.classList.contains("light-theme") ? "☀️" : "🌙";
@@ -167,6 +184,92 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   updateCountdown();
+
+  const favoriteIds = new Set(getFavorites());
+
+  const updateFavoriteButtonState = (button, isFavorite) => {
+    button.classList.toggle("is-favorite", isFavorite);
+    button.textContent = isFavorite ? "♥" : "♡";
+    button.setAttribute("aria-pressed", String(isFavorite));
+    button.setAttribute(
+      "aria-label",
+      `${isFavorite ? "Remove" : "Add"} ${button.closest(".coffee-card").querySelector("h3").textContent} from favorites`
+    );
+  };
+
+  const renderFavorites = () => {
+    const favoriteCoffeeCards = Array.from(coffeeCards).filter((card) =>
+      favoriteIds.has(card.dataset.coffeeId)
+    );
+
+    if (favoriteCoffeeCards.length === 0) {
+      favoritesGrid.innerHTML = "";
+      favoritesGrid.classList.remove("has-items");
+      favoritesEmpty.style.display = "block";
+      return;
+    }
+
+    favoritesGrid.innerHTML = favoriteCoffeeCards
+      .map(
+        (card) => `
+          <article class="favorite-item" data-coffee-id="${card.dataset.coffeeId}">
+            <img src="${card.querySelector("img").src}" alt="${card.querySelector("img").alt}" />
+            <div class="favorite-item-details">
+              <h3>${card.querySelector("h3").textContent}</h3>
+              <p>${card.querySelector("p").textContent}</p>
+              <span class="price">${card.querySelector(".price").textContent}</span>
+            </div>
+            <button class="favorite-remove" type="button" aria-label="Remove ${card.querySelector("h3").textContent} from favorites">Remove</button>
+          </article>
+        `
+      )
+      .join("");
+
+    favoritesGrid.classList.add("has-items");
+    favoritesEmpty.style.display = "none";
+  };
+
+  coffeeCards.forEach((card) => {
+    const coffeeId = card.dataset.coffeeId;
+    const favoriteButton = card.querySelector(".favorite-btn");
+
+    updateFavoriteButtonState(favoriteButton, favoriteIds.has(coffeeId));
+
+    favoriteButton.addEventListener("click", () => {
+      const isFavorite = favoriteIds.has(coffeeId);
+
+      if (isFavorite) {
+        favoriteIds.delete(coffeeId);
+      } else {
+        favoriteIds.add(coffeeId);
+      }
+
+      saveFavorites([...favoriteIds]);
+      updateFavoriteButtonState(favoriteButton, !isFavorite);
+      renderFavorites();
+    });
+  });
+
+  favoritesGrid.addEventListener("click", (event) => {
+    const removeButton = event.target.closest(".favorite-remove");
+    if (!removeButton) return;
+
+    const favoriteItem = removeButton.closest(".favorite-item");
+    const coffeeId = favoriteItem.dataset.coffeeId;
+    favoriteIds.delete(coffeeId);
+    saveFavorites([...favoriteIds]);
+
+    const menuButton = document.querySelector(
+      `[data-coffee-id="${coffeeId}"] .favorite-btn`
+    );
+    if (menuButton) {
+      updateFavoriteButtonState(menuButton, false);
+    }
+
+    renderFavorites();
+  });
+
+  renderFavorites();
 
   let slideIndex = 0;
   const showSlide = (index) => {
